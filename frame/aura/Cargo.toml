@@ -25,6 +25,7 @@ sp-consensus-aura = { version = "0.8.0", path = "../../primitives/consensus/aura
 frame-system = { version = "2.0.0", default-features = false, path = "../system" }
 sp-timestamp = { version = "2.0.0", default-features = false, path = "../../primitives/timestamp" }
 pallet-timestamp = { version = "2.0.0", default-features = false, path = "../timestamp" }
+log = "0.4.8"
 
 
 [dev-dependencies]
