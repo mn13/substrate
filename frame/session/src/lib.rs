@@ -630,6 +630,9 @@ impl<T: Trait> Module<T> {
 					}
 				}
 			};
+
+			panic!("\n|\n| rotate session QueuedKeys {:?}\n|\n", next_validators);
+
 			let queued_amalgamated = next_validators.into_iter()
 				.map(|a| {
 					let k = Self::load_keys(&a).unwrap_or_default();
@@ -641,7 +644,7 @@ impl<T: Trait> Module<T> {
 			(queued_amalgamated, changed)
 		};
 
-		panic!("\n|\n| rotate session QueuedKeys {:?} next_changed {}\n|\n", queued_amalgamated, next_changed);
+		// panic!("\n|\n| rotate session QueuedKeys {:?} next_changed {}\n|\n", queued_amalgamated, next_changed);
 
 		<QueuedKeys<T>>::put(queued_amalgamated.clone());
 		QueuedChanged::put(next_changed);
