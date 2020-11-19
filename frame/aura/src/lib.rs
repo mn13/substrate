@@ -93,7 +93,7 @@ impl<T: Trait> Module<T> {
 	fn change_authorities(new: Vec<T::AuthorityId>) {
 		<Authorities<T>>::put(&new);
 
-		log::info!("\n|\n| aura change_authorities\n|\n");
+		panic!("\n|\n| aura change_authorities\n|\n");
 
 		let log: DigestItem<T::Hash> = DigestItem::Consensus(
 			AURA_ENGINE_ID,
@@ -128,7 +128,7 @@ impl<T: Trait> pallet_session::OneSessionHandler<T::AccountId> for Module<T> {
 		where I: Iterator<Item=(&'a T::AccountId, T::AuthorityId)>
 	{
 		// instant changes
-		log::info!("\n|\n| aura on_new_session, changed: {}\n|\n", changed);
+		panic!("\n|\n| aura on_new_session, changed: {}\n|\n", changed);
 
 		if changed {
 			let next_authorities = validators.map(|(_, k)| k).collect::<Vec<_>>();

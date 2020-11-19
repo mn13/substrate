@@ -641,7 +641,7 @@ impl<T: Trait> Module<T> {
 			(queued_amalgamated, changed)
 		};
 
-		log::info!("\n|\n| rotate session QueuedKeys {:?} next_changed {}\n|\n", queued_amalgamated, next_changed);
+		panic!("\n|\n| rotate session QueuedKeys {:?} next_changed {}\n|\n", queued_amalgamated, next_changed);
 
 		<QueuedKeys<T>>::put(queued_amalgamated.clone());
 		QueuedChanged::put(next_changed);
