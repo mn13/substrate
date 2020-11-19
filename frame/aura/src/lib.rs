@@ -128,7 +128,7 @@ impl<T: Trait> pallet_session::OneSessionHandler<T::AccountId> for Module<T> {
 		where I: Iterator<Item=(&'a T::AccountId, T::AuthorityId)>
 	{
 		// instant changes
-		panic!("\n|\n| aura on_new_session, changed: {}\n|\n", changed);
+		// panic!("\n|\n| aura on_new_session, changed: {}\n|\n", changed);
 
 		if changed {
 			let next_authorities = validators.map(|(_, k)| k).collect::<Vec<_>>();
@@ -140,7 +140,7 @@ impl<T: Trait> pallet_session::OneSessionHandler<T::AccountId> for Module<T> {
 	}
 
 	fn on_disabled(i: usize) {
-		panic!("\n|\n| aura on_disabled\n|\n");
+		// panic!("\n|\n| aura on_disabled\n|\n");
 		let log: DigestItem<T::Hash> = DigestItem::Consensus(
 			AURA_ENGINE_ID,
 			ConsensusLog::<T::AuthorityId>::OnDisabled(i as AuthorityIndex).encode(),

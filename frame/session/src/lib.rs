@@ -631,7 +631,7 @@ impl<T: Trait> Module<T> {
 				}
 			};
 
-			panic!("\n|\n| rotate session next_validators {:?}\n|\n", next_validators);
+			// panic!("\n|\n| rotate session next_validators {:?}\n|\n", next_validators);
 
 			let queued_amalgamated = next_validators.into_iter()
 				.map(|a| {
